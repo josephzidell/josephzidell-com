@@ -14,34 +14,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-	$posts = Post::orderBy('created', 'asc')->get();
-
-    return view('posts', [
-    	'posts' => $posts,
-    ]);
+Route::get('/', function() {
+	return view('welcome');
 });
 
-Route::post('/post', function(Request $request) {
-	$validator = Validator::make($request->all(), [
-		'title' => 'required|max:255',
-	]);
-
-	if ($validator->fails()) {
-		return redirect('/')
-			->withInput()
-			->withErrors($validator);
-	}
-
-	$post = new Post;
-	$post->title = $request->title;
-	$post->save();
-
-	return redirect('/');
-});
-
-Route::delete('/post/{post}', function(Post $post) {
-	$post->delete();
-
-	return redirect('/');
-});
+Route::resource('post', 'PostController');
+Route::resource('business', 'BusinessController');
+Route::resource('message', 'MessageController');

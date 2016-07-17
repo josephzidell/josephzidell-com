@@ -12,5 +12,8 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass('app.scss')
+    .sass('josephzidell.scss');
+    // .version('public/css/app.css');
+    // mix.sass('posts.scss');
 });
