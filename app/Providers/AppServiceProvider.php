@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $pages = [
             'about'     => 'About',
-            'portfolio' => 'Portfolio / Testimonials',
+            // 'portfolio' => 'Portfolio / Testimonials',
             'process'   => 'My Process',
             'benefit'   => 'Benefits',
             'contact'   => 'Contact',
@@ -37,11 +37,11 @@ class AppServiceProvider extends ServiceProvider
             // 'ofishel',
             // 'rentalsofdistinction.png'
         ];
-        $allBusinesses = Business::all();
+        // $allBusinesses = Business::all();
 
         view()->share('pages', $pages);
         view()->share('logos', $logos);
-        view()->share('allBusinesses', $allBusinesses);
+        // view()->share('allBusinesses', $allBusinesses);
     }
 
     /**
