@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
             // 'ofishel',
             // 'rentalsofdistinction.png'
         ];
-        // $allBusinesses = Business::all();
+        $allBusinesses = Business::all();
 
         view()->share('pages', $pages);
         view()->share('logos', $logos);
