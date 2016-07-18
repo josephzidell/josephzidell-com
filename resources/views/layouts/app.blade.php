@@ -12,7 +12,9 @@ endif;
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Laravel Quickstart - Basic</title>
+		<title>Joseph Zidell - Optimizing Businesses</title>
+
+		<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 
 		<link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet">
 		<link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet">
