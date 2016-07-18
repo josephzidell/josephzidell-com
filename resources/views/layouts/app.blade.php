@@ -1,14 +1,3 @@
-<?php
-$route      = preg_split("/(@|\\\\)/", Illuminate\Support\Facades\Route::current()->getActionName());
-$action     = array_pop($route);
-$controller = substr(array_pop($route), 0, -10);
-
-if ($action == 'Closure') :
-	$action     = 'index';
-	$controller = 'Page';
-endif;
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -22,7 +11,7 @@ endif;
 		<link href="{{ URL::asset('css/posts.css') }}" rel="stylesheet">
 	</head>
 
-	<body class="{{ $controller }} {{ $action }}">
+	<body>
 		<div class="wrap" id="top">
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="container">
@@ -34,22 +23,15 @@ endif;
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						@if ($controller == 'Post')
-							<a href="{{ URL::route('post.index') }}" class="navbar-brand">
-								{{ Html::image('img/joseph-zidell-photo-20.jpeg', 'JZ') }}
-								Joseph Zidell's Blog
-							</a>
-						@else
-							<a href="/" class="navbar-brand">
-								{{ Html::image('img/joseph-zidell-photo-20.jpeg', 'JZ') }}
-								Joseph Zidell
-							</a>
-						@endif
+						<a href="/" class="navbar-brand">
+							{{ Html::image('img/joseph-zidell-photo-20.jpeg', 'JZ') }}
+							Joseph Zidell
+						</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right" id="navigation">
-							@include('common.nav', compact('controller'))
+							@include('common.nav')
 						</ul>
 					</div>
 				</div>
@@ -58,7 +40,7 @@ endif;
 			@yield('content')
 
 			<footer>
-				<div class="container">&copy;{{ date('Y') }} Joseph Zidell</div>
+				<div class="container">&copy;2014 - {{ date('Y') }} Joseph Zidell</div>
 			</footer>
 		</div>
 

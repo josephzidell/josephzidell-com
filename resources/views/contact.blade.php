@@ -32,7 +32,7 @@
 			</form>
 		</div -->
 
-		<div class="col-md-6 text-center">
+		<div class="col-md-6">
 			<img src="img/joseph-zidell-photo.jpeg" alt="Joseph Zidell" class="gravatar" />
 		</div>
 
