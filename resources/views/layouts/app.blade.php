@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="_token" content="{{ csrf_token() }}">
+
 		<title>Joseph Zidell - Optimizing Businesses</title>
 
 		<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
@@ -37,7 +42,13 @@
 				</div>
 			</nav>
 
-			@yield('content')
+			<div class="container">
+				<h1>Joseph's Blog</h1>
+				<router-view keep-alive></router-view>
+			</div>
+
+			@include('vue.post.list')
+			@include('vue.post.view')
 
 			<footer>
 				<div class="container">&copy;2014 - {{ date('Y') }} Joseph Zidell</div>
@@ -47,13 +58,14 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="{{ URL::asset("js/bootstrap.min.js") }}"></script>
-		<script type="text/javascript" src="{{ URL::asset("js/jquery.singlePageNav.min.js") }}"></script>
-		<script type="text/javascript" src="{{ URL::asset("js/jquery.scrollTo.min.js") }}"></script>
-		<script type="text/javascript" src="{{ URL::asset("js/jquery.localScroll.min.js") }}"></script>
-		<script type="text/javascript" src="{{ URL::asset("js/jquery.validate.min.js") }}"></script>
-		<script type="text/javascript" src="{{ URL::asset("js/josephzidell.js") }}"></script>
-		<script type="text/javascript" src="{{ URL::asset("css/pygments-monokai.css") }}"></script>
+		{{-- <script type="text/javascript" src="{{ URL::asset("js/bootstrap.min.js") }}"></script> --}}
+		{{-- <script type="text/javascript" src="{{ URL::asset("js/jquery.singlePageNav.min.js") }}"></script> --}}
+		{{-- <script type="text/javascript" src="{{ URL::asset("js/jquery.scrollTo.min.js") }}"></script> --}}
+		{{-- <script type="text/javascript" src="{{ URL::asset("js/jquery.localScroll.min.js") }}"></script> --}}
+		{{-- <script type="text/javascript" src="{{ URL::asset("js/jquery.validate.min.js") }}"></script> --}}
+		{{-- <script type="text/javascript" src="{{ URL::asset("js/josephzidell.js") }}"></script> --}}
+		<script src="{{ URL::asset('js/app.js') }}"></script>
+		<link rel="stylesheet" href="{{ URL::asset("css/pygments-monokai.css") }}">
 
 		<script type="text/javascript">
 
@@ -84,6 +96,7 @@
 	po.src = 'https://apis.google.com/js/platform.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
+	window.csrfToken = '{{ csrf_token() }}';
 </script>
 
 	</body>

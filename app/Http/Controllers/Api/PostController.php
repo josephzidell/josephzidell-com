@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Post;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
@@ -17,11 +16,9 @@ class PostController extends Controller
 	 */
 	public function index()
 	{
-		$posts = Post::where('published', '<', 'NOW()')->get();
+		$posts = Post::where('published', '<', 'NOW()')->orderBy('created_at', 'desc')->get();
 
-		return view('posts.index', [
-			'posts' => $posts,
-		]);
+		return response()->json($posts);
 	}
 
 	/**
@@ -51,9 +48,13 @@ class PostController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-		//
+		$post = Post::where('slug', '=', $slug)->first();
+
+		return response()->json([
+			'post' => $post,
+		]);
 	}
 
 	/**
