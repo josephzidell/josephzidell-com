@@ -7,6 +7,9 @@
 					<img v-bind:src="'img/blog/' + post.slug + '/header.jpg'" class="post-header-image" />
 					@{{{ truncate(post) }}}
 				</div>
+				<div v-show="list.length == 0" class="col-lg-12">
+					<div class="alert alert-info">Posts coming soon</div>
+				</div>
 			</div>
 		</div>
 
