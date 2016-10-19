@@ -30,20 +30,14 @@
 						</button>
 						<a href="/" class="navbar-brand">
 							{{ Html::image('img/joseph-zidell-photo-20.jpeg', 'JZ') }}
-							Joseph Zidell
+							Joe Zidell
 						</a>
-					</div>
-
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right" id="navigation">
-							@include('common.nav')
-						</ul>
 					</div>
 				</div>
 			</nav>
 
 			<div class="container">
-				<h1>Joseph's Blog</h1>
+				<h1>Joe's cup o' Joe</h1>
 				<router-view keep-alive></router-view>
 			</div>
 
