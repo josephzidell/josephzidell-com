@@ -33,11 +33,26 @@
 							Joe Zidell
 						</a>
 					</div>
+
+					<div class="navbar-right btn-group">
+						<a class="navbar-btn btn btn-link" title="LinkedIn" href="https://www.linkedin.com/in/josephzidell" target="_blank">
+							<i class="fa fa-linkedin"></i>
+						</a>
+						<a class="navbar-btn btn btn-link" title="Twitter" href="https://twitter.com/JosephZidell" target="_blank">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<a class="navbar-btn btn btn-link" title="GitHub" href="https://github.com/josephzidell" target="_blank">
+							<i class="fa fa-github"></i>
+						</a>
+						<a class="navbar-btn btn btn-link" title="Stack Overflow" href="http://stackoverflow.com/users/2483765/joe-z" target="_blank">
+							<i class="fa fa-stack-overflow"></i>
+						</a>
+					</div>
 				</div>
 			</nav>
 
 			<div class="container">
-				<h1>Joe's cup o' Joe</h1>
+				<h1>Cups o' Joe</h1>
 				<router-view keep-alive></router-view>
 			</div>
 

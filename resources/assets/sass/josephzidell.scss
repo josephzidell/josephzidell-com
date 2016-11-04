@@ -336,6 +336,13 @@ a:hover, .btn-default:hover {
 	width: 120px;
 }
 
+.navbar-right.btn-group {
+	margin-right: 0;
+}
+.navbar-right a.btn-link{
+	color: #fff;
+}
+
 @media (max-width: 768px) {
 	.btn-primary.expandable{
 		display: block;
@@ -343,10 +350,10 @@ a:hover, .btn-default:hover {
 	}
 }
 
-.btn:hover,
-.btn:focus{
-	border-color: #fff;
-}
+// .btn:hover,
+// .btn:focus{
+// 	border-color: #fff;
+// }
 .btn{ border-radius: 0; }
 .btn-lg{ padding: 18px; }
 
@@ -373,6 +380,12 @@ a:hover, .btn-default:hover {
 .panel-google-plus{ border-color: #dd4b39; }
 .panel-google-plus>.panel-heading{ background-color: #dd4b39; border-color: #dd4b39; color: #fff; }
 .panel-google-plus>.panel-body{ height: 56px; }
+
+.i-facebook{ color: #3B5998; }
+.i-twitter{ color: #4099FF; }
+.btn-twitter{ background-color: #4099FF; border-color: #4099FF; color: #fff; }
+.i-linkedin{ color: #007bb6; }
+.i-google-plus{ color: #dd4b39; }
 
 
 
